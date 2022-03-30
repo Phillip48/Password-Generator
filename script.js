@@ -4,8 +4,12 @@ const numberChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
+
 
 // Write password to the #password input
 function writePassword() {
@@ -15,25 +19,29 @@ function writePassword() {
   passwordText.value = password;
 
 }
-//==================== Notes to add somewhere in function =================//
-  // prompt("How many characters would you like your password to contain?");
-
-//=========================================================================//
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Function for password options slected by user
+// Function for password options selected by user
 function userSelected() {
+  var messageChar = prompt("How many characters would you like your password to use?");
 
+  if (messageChar <= 7 && messageChar>= 130){
+    prompt("Password has to be between 8 and 129 characters");
+
+  var messageSpec = confirm("Click ok to include special characters");
+  var messageNum = confirm("Click ok to include numerical characters");
+  }
 }
 
 // Need an array to randomize the elements selected from the user options
-function randomSelected () {
-// use Math.floor to sleect random choice within ther choice array
-// choose random characters in the array
-// return the random element 
+function randomSelected() {
+  // use Math.floor to sleect random choice within ther choice array
+  // var mathRandom = Math.floor(Math.random() * .length);
+  // choose random characters in the array
+  // return the random element 
+  // return;
 }
 
 // Function to generate the password from user input
@@ -60,7 +68,7 @@ function generatePassword() {
   for (var i = 0; i < array.length; i++) {
     const element = array[i];
     
-    // combine the results and send them to he write password function to present them on the page 
+    // combine the results and send them to the writePassword function to present them on the page 
   }
 }
 // Assignment code
@@ -77,3 +85,5 @@ function writePassword() {
 
 // Event listener to generate button 
 generateBtn.addEventListener("click", writePassword);
+
+generatePassword();
