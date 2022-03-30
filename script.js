@@ -39,9 +39,41 @@ function randomSelected () {
 // Function to generate the password from user input
 function generatePassword() {
   // create an empty var to share the concat password
+  var choice = userSelected();
   // create empty var holding all possible passwords choices
   // create empty var to hold the chosen characters
 
+  // error handling to see if the objects of your choices exist or not
+
+  // conditonal statement needed for choosing special characters
+  if (choice.obj) {
+    possibleChar = possibleChar.concat(specialChars);
+    pickedChar.push(randomSelected(specialChars));
+  } else {
+    
+  }
+
+  for (var i = 0; i < choice.length; i++) {
+    var possibleChar = getSelection[i]
+    
+  }
+  for (var i = 0; i < array.length; i++) {
+    const element = array[i];
+    
+    // combine the results and send them to he write password function to present them on the page 
+  }
+}
+// Assignment code
+var generateBtn = document.querySelector("generate");
+
+// writes password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("password");
+
+  passwordText.value = password;
+
 }
 
-generatePassword();
+// Event listener to generate button 
+generateBtn.addEventListener("click", writePassword);
