@@ -15,19 +15,33 @@ function writePassword() {
   passwordText.value = password;
 
 }
+//==================== Notes to add somewhere in function =================//
+  // prompt("How many characters would you like your password to contain?");
+
+//=========================================================================//
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// Function for password options slected by user
+function userSelected() {
 
-function generatePassword() {
-  var choice = 
-
-
-
-  if () {
-    
-  } else {
-    
-  }
 }
+
+// Need an array to randomize the elements selected from the user options
+function randomSelected () {
+// use Math.floor to sleect random choice within ther choice array
+// choose random characters in the array
+// return the random element 
+}
+
+// Function to generate the password from user input
+function generatePassword() {
+  // create an empty var to share the concat password
+  // create empty var holding all possible passwords choices
+  // create empty var to hold the chosen characters
+
+}
+
+generatePassword();
