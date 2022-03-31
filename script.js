@@ -25,14 +25,34 @@ generateBtn.addEventListener("click", writePassword);
 
 // Function for password options selected by user
 function userSelected() {
-  var messageChar = prompt("How many characters would you like your password to use?");
+  var messageChar = parseInt(prompt("How many characters would you like your password to use?"));
 
-  if (messageChar <= 7 && messageChar>= 130){
-    prompt("Password has to be between 8 and 129 characters");
-
-  var messageSpec = confirm("Click ok to include special characters");
-  var messageNum = confirm("Click ok to include numerical characters");
+  if (messageChar < 7 || messageChar > 129){
+    alert("Password has to be between 8 and 129 characters");
+    return null;
   }
+
+  var confirmSpec = confirm("Click ok to include special characters");
+
+  var confirmNum = confirm("Click ok to include numerical characters");
+
+  var upperCase = confirm("Click ok to include Upper Case Letters");
+
+  var lowerCase = confirm("Click ok to include Lower case letters");
+
+  if(confirmSpec === false && confirmNum === false && upperCase === false && lowerCase === false){
+    alert("You have to chose at least one of the above.");
+    return null;
+  }
+
+  var userEverything = {
+    messageChar: messageChar,
+    confirmSpec: confirmSpec,
+    confirmNum: confirmNum,
+    upperCase: upperCase,
+    lowerCase: lowerCase,
+  };
+  return userEverything;
 }
 
 // Need an array to randomize the elements selected from the user options
@@ -49,9 +69,13 @@ function generatePassword() {
   // create an empty var to share the concat password
   var choice = userSelected();
   // create empty var holding all possible passwords choices
+  var possibleChar = [];
   // create empty var to hold the chosen characters
-
+  var pickedChar = [];
   // error handling to see if the objects of your choices exist or not
+  if (!choice){
+    return null;
+  }
 
   // conditonal statement needed for choosing special characters
   if (choice.obj) {
