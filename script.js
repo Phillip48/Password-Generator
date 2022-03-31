@@ -28,7 +28,7 @@ function userSelected() {
   var messageChar = parseInt(prompt("How many characters would you like your password to use?"));
 
   if (messageChar < 7 || messageChar > 129){
-    alert("Password has to be between 8 and 129 characters");
+    alert("Password has to be between 8 and 129 characters. Please try again.");
     return null;
   }
 
@@ -41,7 +41,7 @@ function userSelected() {
   var lowerCase = confirm("Click ok to include Lower case letters");
 
   if(confirmSpec === false && confirmNum === false && upperCase === false && lowerCase === false){
-    alert("You have to chose at least one of the above.");
+    alert("You have to chose at least one character type.");
     return null;
   }
 
