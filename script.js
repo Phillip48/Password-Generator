@@ -25,26 +25,28 @@ generateBtn.addEventListener("click", writePassword);
 
 // Function for password options selected by user
 function userSelected() {
+  // parseInt --> converts string into integer
   var messageChar = parseInt(prompt("How many characters would you like your password to use?"));
 
+  // Character amount more than 7 less than 130
   if (messageChar < 7 || messageChar > 129){
     alert("Password has to be between 8 and 129 characters. Please try again.");
     return null;
   }
-
+  // Special characters
   var confirmSpec = confirm("Click ok to include special characters");
-
+  // Numerical characters
   var confirmNum = confirm("Click ok to include numerical characters");
-
-  var upperCase = confirm("Click ok to include Upper Case Letters");
-
+  // Upper case letters
+  var upperCase = confirm("Click ok to include Upper case letters");
+  // Lower case letters
   var lowerCase = confirm("Click ok to include Lower case letters");
 
   if(confirmSpec === false && confirmNum === false && upperCase === false && lowerCase === false){
-    alert("You have to chose at least one character type.");
+    alert("You have to chose at least one character type. Please try again.");
     return null;
   }
-
+  // Adds everything together selected from the user
   var userEverything = {
     messageChar: messageChar,
     confirmSpec: confirmSpec,
