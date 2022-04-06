@@ -15,8 +15,8 @@ function generatePassword() {
   var messageChar = parseInt(prompt("How many characters would you like your password to use?"));
 
   // Character amount more than 7 less than 130
-  if (messageChar < 7 || messageChar > 129){
-    alert("Password has to be between 8 and 129 characters. Please try again.");
+  if (messageChar < 8 || messageChar > 128){
+    alert("Password has to be between 8 and 128 characters. Please try again.");
     return ;
   }
 
